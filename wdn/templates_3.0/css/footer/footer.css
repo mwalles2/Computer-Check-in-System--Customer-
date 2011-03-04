@@ -1,0 +1,201 @@
+/*
+All styles for the footer
+Created: 05/22/2009
+Last edited: 07/06/2009
+Author: WDN
+
+#footer
+	|
+	|- #footer_floater
+		|
+		|- .footer_col
+			|
+			|- h3, p, a, img
+		|- #copyright
+			|
+			|- ul>li, a, img
+*/
+@import url('feedback.css');
+@import url('rating.css');
+#footer {
+	margin-top:15px;
+	padding-top:26px;
+	position: relative;
+	clear: both;
+	background-color:#e5e5e5;
+	background-image: url(images/footerBG.png);
+	background-position: top left;
+	background-repeat: repeat-x;
+	text-align: left;
+	font: 71%/150% "Lucida Grande",Verdana,Arial;
+	color: #494949;
+}
+#footer a,
+#footer a:link,
+#footer a:visited {
+	color: #494949;
+	text-decoration:underline;
+}
+
+#footer a:hover
+{
+    color: #ba0000;
+}
+
+#footer_floater {
+	background-image: url(images/topSealb.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	height:41px;
+	margin-bottom:18px;
+}
+#wdn_copyright {
+	clear: both;
+	border-top:1px solid #ffffff;
+	padding:12px;
+	color:#606060;
+	font-size:.9em;
+	line-height:1.4em;
+	min-height:42px;
+}
+#wdn_copyright ul {
+	margin-top:10px;
+}
+#wdn_copyright ul li {
+	display:inline;
+}
+#wdn_unl_wordmark {
+	position:absolute;
+	right:12px;
+	bottom:12px;
+}
+a#wdn_unl_wordmark,
+a#wdn_unl_wordmark:link,
+a#wdn_unl_wordmark:visited {
+	border:none;
+}
+
+#footer .footer_col {
+	width:220px;
+	padding:0 10px 10px 10px;
+	float:left;
+	position:relative;
+	}
+	
+body.liquid #footer .footer_col {width:22.9%}	
+	
+#footer .footer_col h3 {
+	background:url('../images/headingBGRed.gif') repeat-x bottom;
+	padding:5px;
+	color:#fff;
+	margin-bottom:5px;
+	font-size:1.1em;
+}
+#footer .footer_col h3:after {
+	content:'';
+	width:20px;
+	height:10px;
+	display:block;
+	background:url('../images/downIndicators.png') no-repeat;
+	margin-left:30px;
+	margin-top:5px;
+}
+#footer ul {
+	list-style-type:disc;
+	padding:0 0 0 25px;
+}
+
+
+#footer ul.socialmedia {
+	padding:0;
+	margin:0;
+	list-style-type:none;
+	text-align:center;
+}
+#footer ul.socialmedia li {
+	display:inline-block;
+	list-style-type:none;
+}
+#footer ul.socialmedia li a {
+	display:inline-block;
+	width:26px;
+	height:26px;
+	text-indent:-9000px;
+	padding:0px;
+	margin:0 3px 5px 0;
+}
+#wdn_emailthis {
+	background: url(images/socialMedia.png) 0 -52px no-repeat;
+}
+#wdn_facebook {
+	background: url(images/socialMedia.png) -26px -52px no-repeat;
+}
+#wdn_linkedin {
+	background: url(images/socialMedia.png) -52px -52px no-repeat;
+}
+#wdn_myspace {
+	background: url(images/socialMedia.png) -78px -52px no-repeat;
+}
+#wdn_twitter {
+	background: url(images/socialMedia.png) -104px -52px no-repeat;
+}
+#wdn_plurk {
+	background: url(images/socialMedia.png) -130px -52px no-repeat;
+}
+#wdn_digg {
+	background: url(images/socialMedia.png) 0 -78px no-repeat;
+}
+#wdn_delicious {
+	background: url(images/socialMedia.png) -26px -78px no-repeat;
+}
+#wdn_reddit {
+	background: url(images/socialMedia.png) -52px -78px no-repeat;
+}
+#wdn_stumbleupon {
+	background: url(images/socialMedia.png) -78px -78px no-repeat;
+}
+#wdn_newsvine {
+	background: url(images/socialMedia.png) -104px -78px no-repeat;
+}
+#wdn_googlebookmark {
+	background: url(images/socialMedia.png) -130px -78px no-repeat;
+}
+
+
+
+#wdn_emailthis:hover {
+	background: url(images/socialMedia.png) 0 0 no-repeat;
+}
+#wdn_facebook:hover {
+	background: url(images/socialMedia.png) -26px 0 no-repeat;
+}
+#wdn_linkedin:hover {
+	background: url(images/socialMedia.png) -52px 0 no-repeat;
+}
+#wdn_myspace:hover {
+	background: url(images/socialMedia.png) -78px 0 no-repeat;
+}
+#wdn_twitter:hover {
+	background: url(images/socialMedia.png) -104px 0 no-repeat;
+}
+#wdn_plurk:hover {
+	background: url(images/socialMedia.png) -130px 0 no-repeat;
+}
+#wdn_digg:hover {
+	background: url(images/socialMedia.png) 0 -26px no-repeat;
+}
+#wdn_delicious:hover {
+	background: url(images/socialMedia.png) -26px -26px no-repeat;
+}
+#wdn_reddit:hover {
+	background: url(images/socialMedia.png) -52px -26px no-repeat;
+}
+#wdn_stumbleupon:hover {
+	background: url(images/socialMedia.png) -78px -26px no-repeat;
+}
+#wdn_newsvine:hover {
+	background: url(images/socialMedia.png) -104px -26px no-repeat;
+}
+#wdn_googlebookmark:hover {
+	background: url(images/socialMedia.png) -130px -26px no-repeat;
+}

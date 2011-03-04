@@ -1,0 +1,154 @@
+<?php # HtmlTemplate2.class
+// This class reads in a template, sets the different values, and sends it to the browser.
+
+	class HtmlTemplate
+	{
+		// Set the attributes.
+		var $template;
+		var $html;
+		var $code = array();
+		var $src = array();
+		var $parameters = array();
+
+		function HtmlTemplate ($template) // This function sets which template will be used.
+		{
+			$this->template = $template;
+			$this->html = implode ("", (file($this->template))); // Read the template into an array, then create a string.
+		}
+
+		function SetParameter ($variable, $value) // This function sets the particular values.
+		{
+			if($variable == "SCRIPTSRC")
+			{
+				$this->src["javascript"] .= "\t<script type=\"text/javascript\" language=\"javascript\" src=\"".$value."\"></script>\n";
+			}
+			else if($variable == "SCRIPTCODE")
+			{
+				$this->code["javascript"] .= "\t\t".$value."\n";
+			}
+			else if($variable == "CSSSRC")
+			{
+				$this->src["CSS"] .= "\t<link rel=\"stylesheet\" rev=\"stylesheet\" href=\"".$value."\" hreflang=\"EN\" />";
+			}
+			else if($variable == "CSSCODE")
+			{
+				$this->code["CSS"] .= "\t\t".$value."\n";
+			}
+			else
+			{
+				$this->parameters[$variable] = $value;
+			}
+		}
+
+		function AppendParameter ($variable, $value) // This function allows for content to be added to a value.
+		{
+			if(isset($this->parameters[$variable]))
+			{
+				$this->parameters[$variable] .= $value;
+			}
+			else
+			{
+				$this->parameters[$variable] = $value;
+			}
+		}
+
+		function CreatePage () // This function creates the final page.
+		{
+			echo $this->CreateHTML();
+		}
+
+		function CreateHTML () // This function does the bulk of the work.
+		{
+			if(!isset($this->parameters["JAVASCRIPT"]))
+			{
+				$this->parameters["JAVASCRIPT"] = "";
+			}
+			if(!isset($this->src["javascript"]))
+			{
+				$this->src["javascript"] = "";
+			}
+
+			if(!isset($this->code["javascript"]))
+			{
+				$this->code["javascript"] = "";
+			}
+			else
+			{
+				$this->code["javascript"] = "\t<script type=\"text/javascript\" language=\"javascript\">\n".$this->code["javascript"]."\t</script>\n";
+			}
+
+			if(!isset($this->parameters["CSS"]))
+			{
+				$this->parameters["CSS"] = "";
+			}
+
+			if(!isset($this->src["CSS"]))
+			{
+				$this->src["CSS"] = "";
+			}
+
+			if(!isset($this->code["CSS"]))
+			{
+				$this->code["CSS"] = "";
+			}
+			else
+			{
+				$this->code["CSS"] = "\t<style type=\"text/css\">\n".$this->code["CSS"]."\t</style>\n";
+			}
+
+			if(!isset($this->parameters["BODYOPTIONS"]))
+			{
+				$this->parameters["BODYOPTIONS"] = "";
+			}
+
+			$this->parameters["JAVASCRIPT"] .= $this->src["javascript"] . $this->code["javascript"];
+			$this->parameters["CSS"] .= $this->src["CSS"] . $this->code["CSS"];
+
+			foreach ($this->parameters as $key => $value) // Loop through all the parameters and set the variables to values.
+			{
+
+				$template_name = '{' . $key . '}';
+				$this->html = str_replace ($template_name, $value, $this->html);
+			}
+			return $this->html;
+		}
+
+		function CreateSelect($parameters)  // creates a built select drop down list
+		{
+			/*
+				attributes		->	an array of the HTML attributes
+				items			->	an array of items that will be displayed in the select
+				optionItems		->	an array of the values to be used instead of the display text
+				selectedIndex	->	what item is to be selected by defalut
+				tabs			->	the number of tabs to indent the code.  (this is mainly for anal programers like me)
+				varible			->	the paramter varible that will be assinged this select
+			*/
+
+			$tabs = (isset($parameters["tabs"]))?$parameters["tabs"]:0;
+			$tabsStr = str_pad("", $tabs, "\t");
+			(count($parameters["optionItems"])>0)?$options=true:$options=false;
+
+			$out = $tabsStr . "<select";
+			if(isset($parameters["attributes"]))
+			{
+				foreach($parameters["attributes"] as $key => $attribute)
+				{
+					$out .= " " . $key . "=\"" . $attribute . "\"";
+				}
+			}
+			$out .= ">\r"; 
+			foreach($parameters["items"] as $key => $item)
+			{
+				($options)?$optionText=$parameters["optionItems"][$key]:$optionText=$item;
+				$out .= $tabsStr . "\t<option value=\"" . $optionText . "\"";
+				if(isset($parameters["selectedIndex"]) && $key == $parameters["selectedIndex"])
+				{
+					$out .= " selected=\"selected\"";
+				}
+				$out .= ">".$item."</option>\r";
+			}
+			$out .= $tabsStr . "</select>\r";
+			$this->SetParameter($parameters["varible"], $out);
+		}
+	}
+?>

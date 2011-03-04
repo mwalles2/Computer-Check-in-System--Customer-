@@ -1,0 +1,127 @@
+/*
+Styles used for the PeopleSoft Portal.
+
+*/
+
+@import url('../footer/footer.css');
+.header {	
+font-family: Helvetica,Arial,sans-serif;
+}
+#titlegraphic {
+    margin-top:15px;
+    padding-left:60px;
+    padding-bottom:20px;
+    font-size:0.8em;
+    background:url('http://www.unl.edu/wdn/templates_3.0/css/variations/images/shad_pop.gif') repeat-x;
+}
+#titlegraphic h1
+{
+font-family: arial;
+font-size: 1.8em;
+color: #ba0000;
+display:inline;
+}
+#titlegraphic #logo 
+{
+width: 50px;
+background-image: none;
+position: absolute;
+left: 4px;
+top: 4px;
+}
+#psLinks {
+float:right;
+width:404px;
+position:absolute;
+top:10px;
+right:5px;
+font-size:.8em;
+}
+#psGlobal {
+float:left;
+width:170px;
+display:inline;
+position:relative;
+margin-top:2px;
+margin-right:-4px;
+font-size:.8em;
+}
+#psForm {
+float:right;
+position:relative;
+paddinng-left:0px;
+}
+#psLinks a {
+padding-left:16px;
+font-size:.8em;
+
+}
+#psLinks form select {
+border:1px solid #efefef;
+}
+.header table td, #psTabs table td {
+    vertical-align:middle;
+}
+#psLinks table {
+border-spacing:5px;
+border-collapse:separate;
+}
+#psPersonalization {
+width:225px;
+font-size:12px;
+margin-left:5px;
+margin-bottom:10px;
+background:#ffffbf;
+border:1px solid #e8e81c;
+padding:3px;
+text-align:left;
+}
+#psSearch{
+	margin-top:7px;
+	margin-right:-18px;
+	float:right;
+	}
+#psTabs {
+	margin:-10px 0 10px 0px;
+	font-size:12px;
+	font-weight:bold;
+	font-family: Helvetica,Arial,sans-serif;
+}
+#psTabs table {
+border-collapse:collapse;
+border-spacing:0px;
+vertical-align:middle;
+}
+#psTabs td.inactive-tab {
+background:url('http://www.unl.edu/wdn/templates_3.0/css/peoplesoft/images/Tab-InctiveBG.png') repeat-x bottom;
+padding-top:12px;
+	font-size:12px;
+}
+#psTabs td.active-tab {
+background:url('http://www.unl.edu/wdn/templates_3.0/css/peoplesoft/images/Tab-ActiveBG.png') repeat-x bottom;
+padding-top:10px;
+	font-size:12px;
+
+}
+a {
+color: #ba0000;
+text-decoration: none;
+}
+a:hover {
+color: #ee0000;
+}
+a:focus{
+color: #cc0000;
+}
+td.headerHome {
+background: url('http://www.unl.edu/wdn/templates_3.0/css/peoplesoft/images/home.png') top left no-repeat;
+padding-right:10px;
+padding-left:3px;
+}
+td.headerSignOut {
+background: url('http://www.unl.edu/wdn/templates_3.0/css/peoplesoft/images/logout.png') top left no-repeat;
+padding-left:3px;
+}
+#footer {
+height:200px;
+}

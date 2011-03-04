@@ -1,0 +1,7 @@
+CONFIG FILE
+The two files that need to set up are:
+
+{WEBSERVERROOT}/includes/php/db.php
+{WEBSERVERROOT}/includes/php/ldap_info.php
+
+There are examples of these files in the includes directory.

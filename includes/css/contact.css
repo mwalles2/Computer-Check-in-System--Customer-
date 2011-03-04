@@ -1,0 +1,32 @@
+	.data
+	{
+		white-space: nowrap;
+		overflow: hidden; 
+		text-overflow: ellipsis;
+		-o-text-overflow: ellipsis;
+		-icab-text-overflow: ellipsis;
+		-khtml-text-overflow: ellipsis;
+		-moz-text-overflow: ellipsis;
+		-webkit-text-overflow: ellipsis;
+		position: relative;
+		z-index: 10;
+	}
+
+	.data.other.input
+	{
+		width: 90px;
+	}
+	
+	.data:hover
+	{
+		width: auto;
+		-o-text-overflow: inherit;
+		text-overflow: inherit;
+		overflow: visible;
+	}
+
+	.data:hover span
+	{
+		background-color: #bbb;
+		color: #000;
+	}

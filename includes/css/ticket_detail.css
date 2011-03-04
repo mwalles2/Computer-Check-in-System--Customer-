@@ -1,0 +1,16 @@
+	.password
+	{
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		position: absolute;
+		top:0;
+		left:0;
+		width: 205px;
+		height: 20px;
+		z-index: 50000;
+		background-color: #FDD;
+		border: 2px #C00 solid;
+		display: block;
+	}
+	
+	.password:hover { background-color: transparent; }
