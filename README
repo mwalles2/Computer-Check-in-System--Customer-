@@ -1,3 +1,7 @@
+This is a companion project to Computer Check-in System (Technician). This project allows for customers how have checked in a computer using the
+Computer Check-in System to be able to look up the status of their computer and leave notes for the tech(s) working on the computer. To use this
+you will need to install the Computer Check-in System (Technician) project as well (https://github.com/mwalles2/Computer-Check-in-System--Technician-).
+
 CONFIG FILE
 The two files that need to set up are:
 
@@ -5,3 +9,7 @@ The two files that need to set up are:
 {WEBSERVERROOT}/includes/php/ldap_info.php
 
 There are examples of these files in the includes directory.
+
+UNL SPECIFIC FILES
+There are design files that are specific to UNL (http://www.unl.edu) and the UNL Computer Help Center (http://ischc.unl.edu).  This was a temporary
+messure for expedience.  These files will be removed in the future once a system as been built to allow easier customization.
